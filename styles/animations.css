@@ -13,7 +13,6 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-/*Меню*/
 @keyframes choose {
   from {
     transform: translateX(0%);
@@ -49,9 +48,6 @@
     opacity: 1;
   }
 }
-
-
-/*Кнопка-сердечко*/
 
 .like-icon:hover .main-body {
     fill: var(--main-color);
@@ -111,5 +107,3 @@
     transform-origin: center;
     animation: like-sparks 0.3s 0.3s ease-in alternate;
   }
-
-/*Кнопка-надпись*/
