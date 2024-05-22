@@ -8,8 +8,12 @@
 :root.theme-light {
   --background-color: rgba(255, 255, 255, 1);
   --main-color: rgba(0, 0, 0, 1);
-  --button-color:  rgba(255, 255, 255, 1);
+  --button-color: rgba(255, 255, 255, 1);
+  --color-heard: #ff0000;
+  --font-main: "Inter-Variable", sans-serif;
+  --font-accent: "PressStart2P", fantasy;
   --title-weight: 700;
+  --text-weight: 400;
   --background-image: repeating-linear-gradient(
       90deg,
       #d3d3d3 0px 2px,
@@ -22,8 +26,12 @@
 :root.theme-dark {
   --background-color: rgba(0, 0, 0, 1);
   --main-color: rgba(0, 204, 20, 1);
-  --button-color:  rgba(0, 204, 20, 1);
+  --button-color: rgba(0, 204, 20, 1);
+  --color-heard: #ff0000;
+  --font-main: "Inter-Variable", sans-serif;
+  --font-accent: "PressStart2P", fantasy;
   --title-weight: 785;
+  --text-weight: 465;
   --background-image: repeating-linear-gradient(
       90deg,
       black 0px 2px,
@@ -37,8 +45,12 @@
   :root {
     --background-color: rgba(0, 0, 0, 1);
     --main-color: rgba(0, 204, 20, 1);
-    --button-color:  rgba(0, 204, 20, 1);
+    --button-color: rgba(0, 204, 20, 1);
+    --color-heard: #ff0000;
+    --font-main: "Inter-Variable", sans-serif;
+    --font-accent: "PressStart2P", fantasy;
     --title-weight: 785;
+    --text-weight: 465;
     --background-image: repeating-linear-gradient(
         90deg,
         black 0px 2px,
@@ -48,4 +60,3 @@
       linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
   }
 }
-
