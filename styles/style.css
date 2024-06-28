@@ -22,6 +22,7 @@
 
   background-color: var(--background-color, rgba(255, 255, 255, 1));
   background-image: var(--background-image);
+  background-attachment:fixed;
   background-size: cover;
   margin: auto;
   text-align: center;
@@ -107,16 +108,21 @@
   width: 0%;
   height: 2px;
   background-color: var(--main-color);
-  transition: width 0.5s ease-in-out;
+
+  transition-duration: 0.3s;
+  transform: scaleX(0);
+  transform-origin: left center;
+  block-size: 2px;
+}
+
+.theme-menu__button:focus-visible::after {
+  transition-duration: 0.3s;
+  transform: scaleX(1);
 }
 
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-}
-
-.theme-menu__button:focus::after {
-  width: 100%;
 }
 
 .theme-menu__button:disabled {
@@ -204,6 +210,7 @@
   .card__img-watermark {
     -webkit-text-stroke: 1px var(--background-color, rgba(255, 255, 255, 1));
     text-stroke: 1px var(--background-color, rgba(255, 255, 255, 1));
+    text-shadow: none;
   }
 }
 
@@ -236,19 +243,25 @@
   justify-content: flex-end;
   margin-right: 25px;
   margin-bottom: 20px;
-  transition-property: outline;
+}
+
+.card__icon-button {
+  padding: 0px 4px 0px 0px;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+
+  transition-property: border;
   transition-duration: 0.3s;
   transition-timing-function: ease;
 }
 
-.card__icon-button {
-  border: none;
-  background-color: transparent;
-  appearance: none;
+.card__icon-button:focus{
+  outline: none;
 }
 
-.post span::first-letter {
-  text-transform: uppercase;
+.card__icon-button:focus-visible{
+  border: 2px solid var(--main-color);
 }
 
 .like-icon {
@@ -265,6 +278,13 @@
   line-height: 12.6px;
 }
 
+.button__text {
+  font-family: var(--font-accent, fantasy);
+  line-height: 90%;
+  color: var(--button-color, rgba(255, 255, 255, 1));
+  mix-blend-mode: difference;
+}
+
 .button {
   position: relative;
   display: flex;
@@ -277,6 +297,8 @@
   font-family: var(--font-accent, fantasy);
   color: var(--main-color, rgba(0, 0, 0, 1));
   appearance: none;
+  font-size: 14px;
+  line-height: 12.6px;
 }
 
 .button:focus {
@@ -285,32 +307,26 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px var(--main-color, rgba(0, 0, 0, 1));
-  outline: ;
 }
 
 .button::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: var(--main-color, rgba(0, 0, 0, 1));
-  transition: width 0.5s ease-in-out;
+  inset: 0;
+  background-color: var(--main-color, #000);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 
 .button:hover::before {
-  width: 100%;
+  transform: scale(1);
 }
 
 @supports (mix-blend-mode: difference) {
   .button svg {
     transition: none;
-    mix-blend-mode: difference;
-  }
-
-  .button:hover svg {
-    color: var(--button-color, rgba(255, 255, 255, 1));
   }
 
   .button__text {
@@ -321,20 +337,20 @@
 .footer-button {
   text-align: center;
   margin-bottom: 100px;
-  display: flex;
   background-color: var(--background-color);
   width: 306px;
   height: 84px;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  align-items: center;
   justify-content: space-evenly;
 }
 
 .footer-icon {
   width: 28px;
   height: 28px;
+  fill: var(--button-color);
+  mix-blend-mode: difference;
 }
 
 .filter-saturate {
@@ -399,8 +415,6 @@ dialog::backdrop {
 
 .dialog-button {
   background-color: transparent;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   width: 257px;
   min-height: 38px;
@@ -418,21 +432,21 @@ dialog::backdrop {
 
 @media (700px <= width) {
   .header {
-    padding-top: 45px;
-    padding-bottom: 15px;
+    padding-top: 37px;
+    padding-bottom: 20px;
   }
   .header__theme-menu {
-    padding: 7px;
+    padding: 0px;
   }
   .page {
     max-width: 700px;
-    margin: auto;
   }
-
-  .post-img {
-    max-width: 700px;
-    max-height: 700px;
-  }
+.grand-logo{
+  line-height: 65px;
+}
+.grand-title{
+  line-height: 23px;
+}
   .card__img-watermark {
     top: 25px;
     right: 25px;
@@ -449,13 +463,4 @@ dialog::backdrop {
   .dialog-button {
     width: 293px;
   }
-}
-
-.button__text {
-  font-family: var(--font-accent, fantasy);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 90%;
-  color: var(--button-color, rgba(255, 255, 255, 1));
-  mix-blend-mode: difference;
 }
