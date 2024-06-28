@@ -15,11 +15,11 @@
 
 @keyframes choose {
   from {
-    transform: translateX(0%);
+    transform: translateX(0px);
   }
 
   to {
-    transform: translateX(50%);
+    transform: translateX(4px);
   }
 }
 
@@ -36,12 +36,10 @@
 @keyframes like-sparks {
   from {
     fill: transparent;
-    opacity: 0;
   }
 
   to {
     fill: var(--color-heard, #ff0000);
-    opacity: 1;
   }
 }
 
@@ -95,9 +93,11 @@
 .like-icon.is-liked .heart {
   transform-origin: center;
   animation: like-zoom 0.3s 0.1s ease-in alternate;
+  animation-iteration-count: 1;
 }
 
 .like-icon.is-liked .sparks {
   transform-origin: center;
   animation: like-sparks 0.3s 0.3s ease-in alternate;
+  animation-iteration-count: 1;
 }
