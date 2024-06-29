@@ -22,7 +22,7 @@
 
   background-color: var(--background-color, rgba(255, 255, 255, 1));
   background-image: var(--background-image);
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-size: cover;
   margin: auto;
   text-align: center;
@@ -106,17 +106,17 @@
   left: 0;
   display: block;
   width: 0%;
-  height: 2px;
   background-color: var(--main-color);
 
   transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease;
   transform: scaleX(0);
   transform-origin: left center;
   block-size: 2px;
 }
 
 .theme-menu__button:focus-visible::after {
-  transition-duration: 0.3s;
   transform: scaleX(1);
 }
 
@@ -256,11 +256,11 @@
   transition-timing-function: ease;
 }
 
-.card__icon-button:focus{
+.card__icon-button:focus {
   outline: none;
 }
 
-.card__icon-button:focus-visible{
+.card__icon-button:focus-visible {
   border: 2px solid var(--main-color);
 }
 
@@ -273,9 +273,7 @@
 .card__like-button {
   width: 130px;
   height: 38px;
-  font-size: 14px;
   font-weight: 400;
-  line-height: 12.6px;
 }
 
 .button__text {
@@ -316,6 +314,7 @@
   background-color: var(--main-color, #000);
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
+  transition-property: transform;
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -349,7 +348,7 @@
 .footer-icon {
   width: 28px;
   height: 28px;
-  fill: var(--button-color);
+  fill: var(--main-color);
   mix-blend-mode: difference;
 }
 
@@ -441,12 +440,12 @@ dialog::backdrop {
   .page {
     max-width: 700px;
   }
-.grand-logo{
-  line-height: 65px;
-}
-.grand-title{
-  line-height: 23px;
-}
+  .grand-logo {
+    line-height: 65px;
+  }
+  .grand-title {
+    line-height: 23px;
+  }
   .card__img-watermark {
     top: 25px;
     right: 25px;
