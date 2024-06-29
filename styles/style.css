@@ -348,7 +348,7 @@
 .footer-icon {
   width: 28px;
   height: 28px;
-  fill: var(--main-color);
+  color: var(--button-color);
   mix-blend-mode: difference;
 }
 
